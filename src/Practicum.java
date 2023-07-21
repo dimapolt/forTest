@@ -6,12 +6,9 @@ import java.util.ArrayList;
 
 public class Practicum {
     public static void main(String[] args) {
-        //int[] days = {2,5, 10,15, 2,4, 1,5,1, 19,12,10,13, 3,4, 15,17,10,90,89};
-//        Random random = new Random();
-//        for (int i=0; i<days.length; i++){
-//            days[i]=random.nextInt(10000);
-//            System.out.println(days[i]);
-//        }
+
+        System.out.println("Удалил отсюда массив");
+
         int[] days = new int[10];
         days[0] = 5;
         days[1] = 2;
