@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Objects;
 
 import static java.lang.Math.abs;
@@ -25,6 +26,7 @@ public class Practicum {
         days[8] = 10;
         days[9] = 50;
 
+        System.out.println("days = " + days);
 
 
 
