@@ -15,7 +15,7 @@ public class Practicum {
         }
 
 
-        System.out.println("Удалил отсюда массив");
+        System.out.println("Для Git");
 
         int[] days = new int[10];
         days[0] = 5;
