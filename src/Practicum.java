@@ -1,11 +1,19 @@
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.HashMap;
 
-import static java.lang.Math.abs;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Practicum {
     public static void main(String[] args) {
+
+        HashMap<Integer, Month> hm = new HashMap<>();
+
+        for (int name : hm.keySet()){
+            for (int i = 0; i < hm.get(name).expenses.size(); i++) {
+                hm.get(name).expenses.get(i);
+            }
+        }
+
 
         System.out.println("Удалил отсюда массив");
 
@@ -23,7 +31,6 @@ public class Practicum {
         days[8] = 10;
         days[9] = 50;
 
-        System.out.println("days = " + days);
 
 
 
@@ -37,8 +44,6 @@ public class Practicum {
          arrayList.add("Молоток");
          arrayList.add("Линейка");
          arrayList.add("Саморез");
-
-        System.out.println(arrayList);
 
 
 //
@@ -83,33 +88,61 @@ public class Practicum {
 //
 //        ordersManager.removeUnprofitableOrders();
 
-
-
-
-
-
-
     }
 
-    static String getYearNumber1(String yearName){
-        char[] yearNameToChar = yearName.toCharArray();
-        String yearNumber = String.valueOf(yearNameToChar[2]) + String.valueOf(yearNameToChar[3]) +
-                String.valueOf(yearNameToChar[4]) + String.valueOf(yearNameToChar[5]);
-        return yearNumber;
-    }
-    static String getYearNumber2(String yearName){
-        return yearName.substring(2,6);
-    }
-    static String getMonthNumber(String monthName){
-        char[] monthNameToChar = monthName.toCharArray();
-        String monthNumber = String.valueOf(monthNameToChar[6])+String.valueOf(monthNameToChar[7]);
-        return monthNumber;
+
+    public static String checkStatus(String status){
+        switch (status) { // Если "IN_PROGRESS" или "DONE" возвращаем их же
+            case "IN_PROGRESS":
+                return "IN_PROGRESS";
+            case "DONE":
+                return "DONE";
+            default:
+                return "NEW"; // Во всех остальных случаях возвращаем "NEW"
+        }
     }
 
-    static String getYearNumber(String monthName) {
-        String[] parts = monthName.split(","); // mm,yyyy
-        String yearName = parts[1];
-        return yearName;
+    public static String updateEpicStatus(){
+
+        ArrayList<String> al = new ArrayList<>();
+
+        al.add("DONE");
+        al.add("DONE");
+        al.add("DONE");
+        al.add("DONE");
+        al.add("DONE");
+        al.add("DONE");
+        al.add("DONE");
+        al.add("DONE");
+        al.add("DONE");
+        al.add("DONE");
+
+
+
+
+            int newCounter = 0;
+            int doneCounter = 0;
+
+            for (String status : al){
+
+                if (status == "NEW") {
+                    newCounter++;
+                } else if (status == "DONE") {
+                    doneCounter++;
+                }
+            }
+
+            if (newCounter == al.size()){
+
+                return "NEW";
+            } else if (doneCounter == al.size()){
+
+                return "DONE";
+            } else {
+
+                return "IN_PROGRESS";
+            }
+
     }
 
 
